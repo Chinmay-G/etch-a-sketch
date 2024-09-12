@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgoldenrodyellow;
+    font-family: "Press Start 2P", sans-serif;
+}
+
+#heading {
+    text-align: center;
+}
+
+.interface {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+}
+
+.container {
+    box-sizing: content-box;
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    display: flex;
+    flex-wrap: wrap;
+    border: solid black 2px;
+    box-shadow: black 2px 2px 2px;
+    border-radius: 4px;
+}
+
+.options {
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+button, #color {
+    width: 100px;
+    height: 35px;
+    border: none;
+    border-radius: 2px;
+    box-shadow: black 3px 3px 3px;
+    font-family: "Press Start 2P", sans-serif;
+    background-color: blanchedalmond;
+}
+
+button:hover, #numberOfSquares:hover, #color:hover {
+    cursor: pointer;
+    background-color: rgb(255, 209, 140);
+}
+
+button:active, #color:active {
+    transform: translateY(3px);
+}
+
+.screenMode {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.slider {
+    display: flex;
+    flex-direction: column;
+}
+
+.sliderSub {
+    display: flex;
+    flex-direction: column;
+}
+
+#numberOfSquares {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 14px;
+    border-radius: 3px;
+    background-color: rgb(253, 230, 199);
+    box-shadow: black 3px 3px 3px;
+}
+
+#numberOfSquares::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 28px;
+    border-radius: 5px;
+    background-color: burlywood;
+}
+
+#sliderVal {
+    font-size: 11px;
+    padding: 2px 3px;
+    border: solid rgb(251, 225, 186) 5px;
+    border-radius: 4px;
+    background-color: rgb(255, 214, 152);
+    box-shadow: black 3px 3px 3px;
+    margin: 0 auto;
+}
+
+.selectColor {
+    display: flex;
+    flex-direction: column;
+}
+
+.selectColorSub {
+    display: flex;
+    gap: 30px;
+}
+
+#color {
+    -webkit-appearance: none;
+    border: none;
+    padding: 3px 30px;
+}

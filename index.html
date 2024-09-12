@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="stylesheet.css">
+</head>
+
+<body>
+    <h1 id="heading">Etch-a-Sketch</h1>
+    <div class="interface">
+        <div class="container"></div>
+        <div class="options">
+            <div class="screenMode">
+                <h3>Screen Mode: </h3>
+                <div>
+                    <button id="light">Light</button>
+                    <button id="dark">Dark</button>
+                </div>
+            </div>
+            <div class="slider">
+                <h3>Grid size : </h3>
+                <div class="sliderSub">
+                    <p>01 <input type="range" value="16" min="1" max="100" id="numberOfSquares"
+                            oninput="sliderChange(this.value)"> 100</p>
+                    <output id="sliderVal"> </output>
+                </div>
+            </div>
+            <div class="selectColor">
+                <h3>Select Color :</h3>
+                <div class="selectColorSub">
+                    <input type="color" id="color">
+                    <button id="random">Random</button>
+                </div>
+            </div>
+            <div>
+                <button id="clear">Clear Screen</button>
+            </div>
+
+        </div>
+    </div>
+
+    <script src=" etch-a-sketch.js"></script>
+</body>
+
+</html>
