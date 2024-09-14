@@ -33,14 +33,18 @@ body {
 }
 
 .options {
-    margin-top: 2px;
     display: flex;
     flex-direction: column;
-    gap: 70px;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+.options h3 {
+    font-size: medium;
 }
 
 button, #color {
-    width: 100px;
+    width: 140px;
     height: 35px;
     border: none;
     border-radius: 2px;
@@ -62,6 +66,15 @@ button:active, #color:active {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+
+.screenMode button{
+    font-size: 11px;
+    width: 80px;
+    border-radius: 30%;
 }
 
 .slider {
@@ -108,11 +121,25 @@ button:active, #color:active {
 
 .selectColorSub {
     display: flex;
-    gap: 30px;
+    width: 100%;
+    justify-content: space-between;
 }
 
 #color {
     -webkit-appearance: none;
     border: none;
     padding: 3px 30px;
+}
+
+#clear {
+    width: 100%;
+}
+
+.darkening {
+    display: flex;
+    justify-content: space-between;
+}
+
+#darkener, #stopDarkener {
+    height: 80px;
 }

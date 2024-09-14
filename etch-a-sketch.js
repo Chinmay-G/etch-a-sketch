@@ -12,8 +12,14 @@ const clear = document.getElementById('clear');
 const random = document.getElementById('random');
 const color = document.getElementById('color');
 
+const darkener = document.getElementById('darkener');
+const stopDarkener = document.getElementById('stopDarkener');
+
 let div = [];
 let n
+let brightness = [];
+let opacity = [];
+let darken = false;
 
 function getRandomColor() {
     const letters = '0123456789ABCDEF';
@@ -23,19 +29,24 @@ function getRandomColor() {
     return color;
 };
 
-// numberOfSquares.value = 16;
+// numberOfSquares.value = 16; (initially)
 function sliderChange(val) {
     document.getElementById('sliderVal').innerHTML = val + 'x' + val;
     container.innerHTML = '';
     n = val * val;
+    // for (let i = 1; i <= n; i++)
+    //     opacity[i] = 0.4;
     for (let i = 1; i <= n; i++) {
         div[i] = document.createElement('div');
         div[i].style.width = `${600 / val}px`;
         div[i].style.height = `${600 / val}px`;
         document.querySelector('.container').appendChild(div[i]);
+        div[i].style.filter = 'brightness(100%)';
 
         div[i].addEventListener('mouseover', function () {
-            div[i].style.background = getRandomColor();
+            div[i].style.background = `${getRandomColor()}`;
+            // div[i].style.opacity = opacity[i];
+            // opacity[i] += 0.1;
         });
     }
     return val;
@@ -73,8 +84,12 @@ dark.addEventListener('click', function () {
 
 // Clear Screen
 clear.addEventListener('click', function () {
-    for (let i = 1; i <= n; i++)
+    for (let i = 1; i <= n; i++) {
         div[i].style.backgroundColor = 'transparent';
+        brightness[i] = 100;
+        div[i].style.filter = `brightness(${brightness[i]}%)`;
+        // opacity[i] = 0.7;
+    }
 });
 
 // Select random colors 
@@ -95,4 +110,27 @@ color.addEventListener('click', function () {
     }
 });
 
-sliderChange(16);
+// Darkener
+darkener.addEventListener('click', function () {
+    darken = true;
+    for (let i = 1; i <= n; i++)
+        brightness[i] = 100;
+    for (let i = 1; i <= n; i++) {
+        div[i].addEventListener('mouseover', function () {
+            if (darken === true) {
+                brightness[i] = brightness[i] - 10;
+                console.log(brightness);
+                div[i].style.filter = `brightness(${brightness[i]}%)`;
+            }
+        });
+    }
+
+});
+
+// Stop Darkening
+stopDarkener.addEventListener('click', function () {
+    darken = false;
+});
+
+sliderChange(numberOfSquares.value);
+// sliderChange(16);
